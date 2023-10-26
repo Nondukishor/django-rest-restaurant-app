@@ -1,0 +1,7 @@
+[MESSAGES CONTROL]
+disable=C0111,W0613,E1101,E0015,W0311
+warning=C
+[REPORTS]
+reports=no
+[tool.pylint]
+jars = "10"

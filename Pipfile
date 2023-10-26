@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+django-cors-headers = "*"
+django-extensions = "*"
+dj-rest-auth = {extras = ["with_social"], version = "==4.0.0"}
+rest-framework-simplejwt = "*"
+django-dotenv = "*"
+pyjwt = "*"
+djangorestframework-simplejwt = "*"
+bcrypt = "*"
+pylint = "*"
+pylint-django = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
