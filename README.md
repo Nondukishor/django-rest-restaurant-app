@@ -8,4 +8,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+# For see all route list
+
+```
+python manage.py show_urls
+```
+
 

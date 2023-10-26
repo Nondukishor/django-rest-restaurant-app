@@ -65,6 +65,7 @@ class RestaurantViewSet(APIView):
         return Response("Restaurant deleted", status=status.HTTP_204_NO_CONTENT)
 
 class MenuViewSet(APIView):
+    permission_classes = [IsAuthenticated]
     def get_object(self, pk):
         try:
             return Menu.objects.get(pk=pk)
@@ -115,6 +116,7 @@ class MenuViewSet(APIView):
         return Response("Menu deleted", status=status.HTTP_204_NO_CONTENT)
       
 class VoteViewSet(APIView):
+    permission_classes = [IsAuthenticated]
     def get_object(self, pk):
         try:
             return Vote.objects.get(pk=pk)
@@ -137,7 +139,7 @@ class VoteViewSet(APIView):
 
         paginator = LimitOffsetPagination()
         result_set = paginator.paginate_queryset(Vote.objects.all(), request)
-        serializer = MenuSerializer(result_set, many=True)
+        serializer = VoteSerializer(result_set, many=True)
         return paginator.get_paginated_response(serializer.data)
 
     def post(self, request):
@@ -228,7 +230,4 @@ class UserPasswordResetView(APIView):
   def post(self, request, uid, token, format=None):
     serializer = UserPasswordResetSerializer(data=request.data, context={'uid':uid, 'token':token})
     serializer.is_valid(raise_exception=True)
-    return Response({'msg':'Password Reset Successfully'}, status=status.HTTP_200_OK)
-
-
-    
+    return Response({'msg':'Password Reset Successfully'}, status=status.HTTP_200_OK)  

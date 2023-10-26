@@ -1,5 +1,15 @@
 from django.urls import path
-from .views import RestaurantViewSet, MenuViewSet, VoteViewSet,  SendPasswordResetEmailView, UserChangePasswordView, UserLoginView, UserProfileView, UserRegistrationView, UserPasswordResetView
+from .views import (
+    RestaurantViewSet, 
+    MenuViewSet, 
+    VoteViewSet,  
+    SendPasswordResetEmailView, 
+    UserChangePasswordView, 
+    UserLoginView, 
+    UserProfileView, 
+    UserRegistrationView, 
+    UserPasswordResetView
+    )
 
 app_name="api"
 urlpatterns = [
